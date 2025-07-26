@@ -1,0 +1,88 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  padding: 16px;
+  border-radius: 14px;
+  width: 100%;
+  max-width: 276px;
+  height: auto;
+  background-color: #fff;
+  position: relative;
+  font-style: normal;
+}
+
+.thumb {
+  position: relative;
+  width: 100%;
+  height: 268px;
+  border-radius: 14px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border-radius: 14px;
+  background: linear-gradient(
+    180deg,
+    rgba(18, 20, 23, 0.5) 0%,
+    rgba(18, 20, 23, 0) 100%
+  );
+  position: relative;
+  overflow: hidden;
+}
+
+.favoriteBtn {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.titleRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 8px;
+}
+
+.title {
+  font-size: 16px;
+  line-height: 20px;
+  font-weight: 500;
+  color: #101828;
+}
+
+.model {
+  color: #3470ff;
+}
+
+.infoList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  font-size: 12px;
+  line-height: 16px;
+  font-weight: 400;
+  color: #8d929a;
+  margin-bottom: 4px;
+}
+
+.readMore {
+  margin-top: auto;
+  text-align: center;
+  display: block;
+  padding: 12px;
+  background-color: #3470ff;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 20px;
+  border-radius: 12px;
+  color: #fff;
+}
