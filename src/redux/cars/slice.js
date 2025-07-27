@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { fetchCars } from './operations.js';
+import { fetchCars, fetchCarById } from './operations.js';
 
 const handlePending = state => {
   state.isLoading = true;
@@ -19,9 +19,9 @@ const sliceCars = createSlice({
     error: null,
     totalCars: null,
     page: 1,
-    // perPage: 12,
     hasMore: true,
     favorites: JSON.parse(localStorage.getItem('favorites')) || [],
+    selectedCar: null,
   },
   reducers: {
     addToFavorites(state, action) {
@@ -48,10 +48,12 @@ const sliceCars = createSlice({
   extraReducers: builder => {
     builder
       .addCase(fetchCars.pending, handlePending)
+
       .addCase(fetchCars.fulfilled, (state, action) => {
         state.isLoading = false;
 
-        const { cars, totalCars, totalPages, page } = action.payload;
+        const { cars, totalCars, totalPages } = action.payload;
+        const page = Number(action.payload.page);
 
         if (!Array.isArray(cars)) {
           state.error = 'Invalid cars payload';
@@ -63,7 +65,7 @@ const sliceCars = createSlice({
           const newCars = cars.filter(car => !existingIds.has(car.id));
           state.items = [...state.items, ...newCars];
         } else {
-          state.items = cars; // перезапис для першої сторінки
+          state.items = cars;
         }
 
         state.totalCars = totalCars;
@@ -71,7 +73,10 @@ const sliceCars = createSlice({
         state.page = page;
         state.hasMore = page < totalPages;
       })
-      .addCase(fetchCars.rejected, handleRejected);
+      .addCase(fetchCars.rejected, handleRejected)
+      .addCase(fetchCarById.fulfilled, (state, action) => {
+        state.selectedCar = action.payload;
+      });
   },
 });
 

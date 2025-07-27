@@ -65,11 +65,10 @@ const CarCard = ({
           aria-label={isFavorite ? 'Remove from favorites' : 'Add to favorites'}
         >
           <Heart
-            fill={isFavorite ? '#fff' : 'transparent'}
-            stroke="#fff"
+            className={css.heart}
+            fill={isFavorite ? '#3470ff' : 'transparent'}
+            stroke={isFavorite ? '#3470ff' : '#ffffff'}
             strokeWidth={2}
-            strokeLinecap="round"
-            strokeLinejoin="round"
           />
         </Button>
       </div>
@@ -89,7 +88,6 @@ const CarCard = ({
 
       <ul className={css.infoList}>
         <li>{type} |</li>
-        <li>{accessories[0]}</li>
         <li>{Number(mileage).toLocaleString()} km</li>
       </ul>
 

@@ -1,5 +1,4 @@
-import { Suspense } from 'react';
-import { Outlet, NavLink } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import Logo from '../../components/Logo/Logo.jsx';
 
 import css from './Header.module.css';
@@ -15,12 +14,12 @@ const Header = () => {
             <nav className={css.nav}>
               <ul>
                 <li>
-                  <NavLink to="/" className={addActive}>
+                  <NavLink to="/" end className={addActive}>
                     Home
                   </NavLink>
                 </li>
                 <li>
-                  <NavLink to="/catalog" className={addActive}>
+                  <NavLink to="/catalog" end className={addActive}>
                     Catalog
                   </NavLink>
                 </li>
@@ -29,9 +28,6 @@ const Header = () => {
           </div>
         </section>
       </header>
-      <Suspense fallback={null}>
-        <Outlet />
-      </Suspense>
     </>
   );
 };

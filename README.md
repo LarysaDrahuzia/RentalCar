@@ -1,12 +1,55 @@
-# React + Vite
+RentalCar Application
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Опис
 
-Currently, two official plugins are available:
+Проєкт RentalCar — це веб‑додаток для оренди автомобілів, який дозволяє
+користувачам переглядати каталог машин, застосовувати фільтри, зберігати
+улюблені та бронювати авто.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Основні функції
 
-## Expanding the ESLint configuration
+Перегляд списку автомобілів з детальними картками
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Фільтрація за брендом, ціною та пробігом
+
+Пагінація з кнопкою Load More
+
+Додавання автомобілів у список обраних із збереженням у localStorage
+
+Форма бронювання з валідацією та повідомленнями
+
+Встановлення
+
+Клонуйте репозиторій:
+
+git clone https://(https://github.com/LarysaDrahuzia/RentalCar)
+
+Встановіть залежності:
+
+npm install
+
+Налаштування
+
+Переконайтеся, що REACT_APP_API_BASE_URL вказує на
+https://car-rental-api.goit.global.
+
+Запуск проекту
+
+Робота виконана з використанням бандлеру Vite на React. Для запитів
+використовується бібліотека Axios. Відкрийте у браузері http://localhost:5173.
+
+Використання
+
+На сторінці (/catalog) переглядайте список автомобілів.
+
+Використовуйте фільтри зверху для пошуку.
+
+Натискайте "Load More" для підвантаження нових машин.
+
+Натискайте ❤️ на картках, щоб додати улюблені.
+
+Клік на "Read more" відкриває сторінку деталей із формою бронювання.
+
+Автор
+
+Ім'я: Larysa Drahuzia Email: draglara@ukr.net

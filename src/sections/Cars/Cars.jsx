@@ -10,6 +10,8 @@ import {
   selectHasMore,
 } from '../../redux/cars/selectors.js';
 import { fetchCars } from '../../redux/cars/operations.js';
+import { resetCars } from '../../redux/cars/slice.js';
+
 import css from './Cars.module.css';
 
 const Cars = () => {
@@ -20,14 +22,19 @@ const Cars = () => {
   const page = useSelector(selectPage);
   const hasMore = useSelector(selectHasMore);
 
+  const handleFilter = filters => {
+    dispatch(resetCars());
+    dispatch(fetchCars({ page: 1, ...filters }));
+  };
+
   const handleLoadMore = () => {
-    dispatch(fetchCars({ page }));
+    dispatch(fetchCars({ page: page + 1 }));
   };
 
   return (
     <section className={css.cars}>
       <div className={css.box}>
-        <CarsFilters />
+        <CarsFilters onFilter={handleFilter} />
         {isLoading && <Loader />}
         {cars.length > 0 && <CarsList cars={cars} />}
         {hasMore && (
