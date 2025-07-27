@@ -10,7 +10,6 @@ import Loader from '../components/Loader/Loader.jsx';
 import css from './DetailsCar.module.css';
 
 const DetailsCar = () => {
-  // const { id } = useParams();
   const { id: routeId } = useParams();
   const dispatch = useDispatch();
   const car = useSelector(selectSelectedCar);
@@ -26,7 +25,6 @@ const DetailsCar = () => {
   return (
     <section className={css.details}>
       <div className={css.carWrapper}>
-        {/* {isLoading || (!car && <Loader />)} */}
         <div className={css.imageWrapper}>
           <img
             src={car.img}

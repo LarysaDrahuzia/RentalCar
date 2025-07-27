@@ -7,7 +7,6 @@ import {
   selectIsLoading,
   selectError,
   selectPage,
-  // selectCars,
 } from '../redux/cars/selectors.js';
 import { fetchCars, fetchBrands } from '../redux/cars/operations.js';
 
@@ -17,7 +16,6 @@ const CatalogCars = () => {
   const isLoading = useSelector(selectIsLoading);
   const isError = useSelector(selectError);
   const page = useSelector(selectPage);
-  // const cars = useSelector(selectCars);
 
   // Завантаження брендів (одноразово)
   useEffect(() => {

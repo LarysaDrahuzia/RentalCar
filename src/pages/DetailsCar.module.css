@@ -11,8 +11,8 @@
     'image info'
     'form  info';
   column-gap: 32px;
-  row-gap: 8px; /*тут можеш підкоригувати відстань вертикально  */
-  align-items: start; /* <— ось воно! */
+  row-gap: 8px;
+  align-items: start;
 }
 
 @media (max-width: 768px) {

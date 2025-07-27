@@ -3,26 +3,6 @@ import { createAsyncThunk } from '@reduxjs/toolkit';
 
 axios.defaults.baseURL = 'https://car-rental-api.goit.global';
 
-// export const fetchCars = createAsyncThunk(
-//   'cars/fetchCars',
-//   async (
-//     { page = 1, totalCars = '', totalPages = '', brand = '', query = '' } = {},
-//     thunkAPI
-//   ) => {
-//     try {
-//       const response = await axios.get('/cars', {
-//         params: { page, totalCars, totalPages, brand, query },
-//       });
-
-//       return response.data;
-//     } catch (error) {
-//       return thunkAPI.rejectWithValue(
-//         error.response?.data?.message || 'Error fetching cars'
-//       );
-//     }
-//   }
-// );
-
 export const fetchCars = createAsyncThunk(
   'cars/fetchCars',
   async (
